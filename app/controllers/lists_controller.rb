@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
   # GET lists/
   def index
+    @lists = List.all
   end
 
   # GET lists/:id
