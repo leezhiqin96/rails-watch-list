@@ -7,11 +7,13 @@ class ListsController < ApplicationController
   # GET lists/:id
   def show
     @list = List.find(params[:id])
+    @movies_in_list = @list.movies
   end
 
   # GET lists/new
   def new
     @list = List.new
+    @movies = Movie.all
   end
 
   # POST lists/
