@@ -6,6 +6,7 @@ class ListsController < ApplicationController
 
   # GET lists/:id
   def show
+    @list
   end
 
   # GET lists/new
@@ -14,5 +15,11 @@ class ListsController < ApplicationController
 
   # POST lists/
   def create
+  end
+
+  private
+
+  def set_list
+    @list = List.find(params[:id])
   end
 end
