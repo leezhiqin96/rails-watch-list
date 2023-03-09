@@ -1,4 +1,7 @@
+<% movies_array = Movie.all.map { |movie| [movie.title, movie.id] } %>
+
 <%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.select :movie_id, options_for_select(movies_array) %>
   <%= f.input :comment %>
   <%= f.submit "Submit comment", class: "btn btn-primary" %>
 <% end %>
