@@ -2,7 +2,7 @@
 <%= render "shared/banner" %>
 
 
-<div class="container">
+<div class="cards-wrapper">
   <div class="d-flex justify-content-between">
     <h3>My Lists</h3>
     <%= link_to "Create a new list", new_list_path, class: "btn btn-success"%>
@@ -12,7 +12,7 @@
     <% @lists.each do |list| %>
         <div class="card-category"
         style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-        url(<%= list.image_url %>)">
+        url(<%= list.image_url.empty? ? @default_img : list.image_url %>)">
           <%= link_to list.name, list_path(list), :class => "btn btn-inverse btn-secondary" %>
         </div>
     <% end %>
