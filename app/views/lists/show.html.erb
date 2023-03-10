@@ -1,3 +1,6 @@
+<%= render "shared/navbar" %>
+<%= render "shared/list_banner" %>
+
 <%= link_to "Add new bookmark", new_list_bookmark_path(@list) %>
 <% @list.bookmarks.each do |bookmark| %>
   <h3><%= bookmark.movie.title %></h1>

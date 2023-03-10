@@ -7,6 +7,7 @@ class ListsController < ApplicationController
   # GET lists/:id
   def show
     @list = List.find(params[:id])
+    @banner_img = @list.image_url
     @movies_in_list = @list.movies
   end
 
@@ -30,6 +31,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :image_url)
   end
 end
