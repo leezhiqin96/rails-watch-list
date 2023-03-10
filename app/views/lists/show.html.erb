@@ -1,6 +1,7 @@
 <%= link_to "Add new bookmark", new_list_bookmark_path(@list) %>
-<% @movies_in_list.each do |movie| %>
-  <h3><%= movie.title %></h1>
-  <p><%= movie.overview %></p>
-  <img src="<%= movie.poster_url %>" alt="">
+<% @list.bookmarks.each do |bookmark| %>
+  <h3><%= bookmark.movie.title %></h1>
+  <p><%= bookmark.movie.overview %></p>
+  <img src="<%= bookmark.movie.poster_url %>" alt="">
+  <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <% end %>
