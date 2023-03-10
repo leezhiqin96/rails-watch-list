@@ -2,7 +2,7 @@ class ListsController < ApplicationController
   # GET lists/
   def index
     @lists = List.all
-    @default_img = 'https://img.pikbest.com/templates/20211006/bg/9c71a1b738a380bc45e9ebfd63e42172_101418.png!f305cw'
+    set_default_img
   end
 
   # GET lists/:id
@@ -10,6 +10,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @banner_img = @list.image_url
     @movies_in_list = @list.movies
+    set_default_img
   end
 
   # GET lists/new
@@ -33,5 +34,9 @@ class ListsController < ApplicationController
 
   def list_params
     params.require(:list).permit(:name, :image_url)
+  end
+
+  def set_default_img
+    @default_img = 'https://img.pikbest.com/templates/20211006/bg/9c71a1b738a380bc45e9ebfd63e42172_101418.png!f305cw'
   end
 end
