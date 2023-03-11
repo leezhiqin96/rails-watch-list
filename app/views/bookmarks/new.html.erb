@@ -1,9 +1,10 @@
 <%= render "shared/navbar" %>
-<%= render "shared/banner" %>
+<%= render "shared/list_banner" %>
 
 <div class="form-container">
   <%= simple_form_for [@list, @bookmark] do |f| %>
-    <%= f.association :movie %>
+    <%= f.association :movie, input_html: {  id: "select-single-disabled",
+      data: {controller: "tom-select", tom_select_options_value: {tags: true}} } %>
     <%= f.input :comment %>
     <%= f.submit "Submit comment", class: "btn btn-primary" %>
   <% end %>
