@@ -3,8 +3,7 @@
 
 <div class="form-container">
   <%= simple_form_for [@list, @bookmark] do |f| %>
-    <%= f.association :movie, input_html: {  id: "select-single-disabled",
-      data: {controller: "tom-select", tom_select_options_value: {tags: true}} } %>
+    <%= f.association :movie %>
     <%= f.input :comment %>
     <%= f.submit "Submit comment", class: "btn btn-primary" %>
   <% end %>
