@@ -1,6 +1,5 @@
 require 'open-uri'
 require 'json'
-require 'dotenv/load'
 
 url = 'https://api.themoviedb.org/3/movie/top_rated?'
 api_key = ENV['TMDB_API_KEY']
