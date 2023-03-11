@@ -76,6 +76,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
 }
 
 .card-trip > img {
@@ -98,16 +99,26 @@
 
 
 .card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+  padding: 32px 16px;
 }
 
-.card-trip-infos .card-trip-user {
+.card-trip-info {
+  margin-bottom: 16px;
+}
+
+.card-trip-comment {
+  display: flex;
+  justify-content: space-between;
   position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+  align-items: flex-end;
+  bottom: 0;
+  right:0;
+  left:0;
+  padding-inline: 16px;
+  padding-bottom: 16px;
+}
+
+.card-trip-comment img {
+  width: 10px;
+  margin-right: 8px;
 }

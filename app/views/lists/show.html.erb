@@ -11,11 +11,17 @@
       <div class="card-trip">
         <%= image_tag bookmark.movie.poster_url%>
         <div class="card-trip-infos">
-          <div>
+          <div class="card-trip-info">
             <h2><%= bookmark.movie.title %></h2>
             <p><%= bookmark.movie.overview %></p>
           </div>
-          <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <div class="card-trip-comment">
+            <div class="d-flex">
+              <%= image_tag "https://toppng.com/uploads/preview/double-quotation-marks-11550127028mnhcrm7tmp.png" %>
+              <p class="align-self-left"><%= bookmark.comment %></p>
+            </div>
+            <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          </div>
         </div>
       </div>
     <% end %>
